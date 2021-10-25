@@ -58,8 +58,8 @@ function Adduser({ editing, addUser, edit, editUserId }) {
 		setLoading(true);
 		if (
 			!/[a-z0-9]/i.test(first.current.value) &&
-			!/[a-z0-9]/i.test(first.current.value) &&
-			!/[a-z0-9]/i.test(first.current.value)
+			!/[a-z0-9]/i.test(last.current.value) &&
+			!/[a-z0-9]/i.test(email.current.value)
 		) {
 			setError('Nothing to update');
 			setLoading(false);
