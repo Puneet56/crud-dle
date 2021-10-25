@@ -4,7 +4,7 @@ import tw from 'tailwind-styled-components/dist/tailwind';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Item = tw(motion.div)`
-sm:w-40 sm:h-48 w-36 h-48 flex flex-col items-center justify-start bg-blue-300 sm:rounded-3xl rounded-2xl m-4 overflow-hidden
+sm:w-40 sm:h-48 w-36 h-48 flex flex-col items-center justify-start bg-blue-300 sm:rounded-3xl rounded-2xl m-4 shadow-lg overflow-hidden 
 `;
 
 const variants = {

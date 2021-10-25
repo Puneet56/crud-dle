@@ -9,7 +9,7 @@ import Card from './Card';
 import { IoAddCircleSharp } from 'react-icons/io5';
 
 const Container = tw(motion.div)`
-w-11/12 sm:w-10/12 md:w-9/12 mb-10 rounded-3xl text-center z-10 bg-gray-200 flex flex-col items-center justify-center flex-wrap
+w-11/12 sm:w-10/12 md:w-9/12 mb-10 rounded-3xl text-center z-10 bg-gray-200 flex flex-col items-center justify-center flex-wrap shadow-md
 `;
 const UsersList = tw(motion.div)`
 flex flex-row items-center justify-center flex-wrap mb-5
@@ -20,7 +20,7 @@ mx-auto text-3xl mt-4 border-b-4 border-solid border-blue-500
 `;
 
 const Add = tw(motion.div)`
-sm:w-40 sm:h-48 w-36 h-48 flex flex-col items-center justify-center bg-blue-300 sm:rounded-3xl rounded-2xl m-4 overflow-hidden text-gray-400
+sm:w-40 sm:h-48 w-36 h-48 flex flex-col items-center justify-center bg-blue-300 sm:rounded-3xl rounded-2xl m-4 overflow-hidden text-gray-400 shadow-lg
 `;
 
 function Users() {
@@ -48,8 +48,8 @@ function Users() {
 	};
 
 	const addUser = (userdetails) => {
-		setAddingUser(!addingUser);
 		setUsers((prevState) => [userdetails, ...prevState]);
+		setAddingUser(!addingUser);
 	};
 
 	const deleteUser = async (userId, status) => {
