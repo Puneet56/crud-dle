@@ -37,7 +37,7 @@ function Adduser({ editing, addUser, edit, editUserId }) {
 				first_name: first.current.value,
 				last_name: last.current.value,
 				email: email.current.value,
-				avatar: `https://avatars.dicebear.com/api/gridy/${
+				avatar: `https://avatars.dicebear.com/api/micah/${
 					first.current.value.split(' ')[0]
 				}.svg`,
 			});

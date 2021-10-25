@@ -35,7 +35,7 @@ function Users() {
 				const fetchedUsers = await axios.get(
 					'https://reqres.in/api/users?page=2'
 				);
-				setUsers(() => fetchedUsers.data.data.sort((a, b) => a.id - b.id));
+				setUsers(() => fetchedUsers.data.data.sort((a, b) => b.id - a.id));
 			} catch (error) {
 				console.log(error);
 			}
@@ -79,7 +79,7 @@ function Users() {
 				modifiedUser[0].email = userdetails.email;
 			}
 			unmodifiedUsers.push(modifiedUser[0]);
-			return unmodifiedUsers.sort((a, b) => a.id - b.id);
+			return unmodifiedUsers.sort((a, b) => b.id - a.id);
 		});
 	};
 
