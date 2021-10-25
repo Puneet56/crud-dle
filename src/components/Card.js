@@ -3,7 +3,7 @@ import tw from 'tailwind-styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
 import Backdrop from './Backdrop';
 import AddUser from './AddUser';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import axios from 'axios';
 
 const Container = tw(motion.div)`
