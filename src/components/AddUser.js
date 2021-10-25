@@ -19,6 +19,8 @@ const Button = tw.button`border-2 border-solid border-blue-600 rounded-md py-2 p
 `;
 
 function Adduser({ editing, addUser, edit, editUserId }) {
+	//component can bve used for adding user and editing user depending in the editing prop
+
 	const first = useRef();
 	const last = useRef();
 	const email = useRef();

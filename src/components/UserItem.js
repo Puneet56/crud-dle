@@ -32,7 +32,7 @@ function UserItem({ item, time, getSelected }) {
 				initial='initial'
 				animate='visible'
 				exit='initial'
-				transition={{ delay: 1 + time * 0.1, type: 'spring', stiffness: 300 }}
+				transition={{ delay: 1 + time * 0.1, type: 'spring', stiffness: 300 }} //childeren shown with delay
 				whileTap='tap'
 			>
 				<img

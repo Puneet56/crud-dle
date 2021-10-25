@@ -24,10 +24,11 @@ sm:w-40 sm:h-48 w-36 h-48 flex flex-col items-center justify-center bg-blue-300 
 `;
 
 function Users() {
-	const [users, setUsers] = useState([]);
-	const [addingUser, setAddingUser] = useState(false);
-	const [selected, setSelected] = useState(0);
+	const [users, setUsers] = useState([]); //initial user state
+	const [addingUser, setAddingUser] = useState(false); //to open backdrop with add user component
+	const [selected, setSelected] = useState(0); //to show backdrop with Card component with clicked user details
 
+	//get initial user list
 	useEffect(() => {
 		const getusers = async () => {
 			try {
@@ -61,14 +62,13 @@ function Users() {
 
 	const editUser = (userdetails) => {
 		setUsers((prevState) => {
-			console.log(prevState);
-			console.log(userdetails.id);
 			const unmodifiedUsers = prevState.filter(
 				(item) => item.id !== userdetails.id
 			);
 			const modifiedUser = prevState.filter(
 				(item) => item.id === userdetails.id
 			);
+			//modified user changed details updated.
 			if (/[a-z0-9]/i.test(userdetails.first_name)) {
 				modifiedUser[0].first_name = userdetails.first_name;
 			}
@@ -121,6 +121,7 @@ function Users() {
 						/>
 					))}
 					<AnimatePresence initial={false} exitBeforeEnter={true}>
+						{/* selected user card */}
 						{selected !== 0 && selected && (
 							<Backdrop onClick={getSelected}>
 								<Card
