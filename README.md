@@ -5,4 +5,6 @@ This App is Made using React, tailwind-styled-components for Styling and Framer-
 
 Data is fetched from https://reqres.in.
 
+App is Live as https://cruddle.netlify.app.
+
 All CRUD operations can be performed.
