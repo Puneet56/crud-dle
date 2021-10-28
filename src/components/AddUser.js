@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import tw from 'tailwind-styled-components';
 import { motion } from 'framer-motion';
 import axios from 'axios';
@@ -18,8 +18,8 @@ mx-auto text-3xl border-b-4 border-solid border-blue-500
 const Button = tw.button`border-2 border-solid border-blue-600 rounded-md py-2 px-5 text-lg text-blue-600 active:bg-blue-600 active:text-white focus:outline-none 
 `;
 
-function Adduser({ editing, addUser, edit, editUserId }) {
-	//component can bve used for adding user and editing user depending in the editing prop
+function Adduser({ editing, addUser, edit, editUserId, user }) {
+	//component can be used for adding user and editing user depending in the editing prop
 
 	const first = useRef();
 	const last = useRef();
@@ -27,6 +27,14 @@ function Adduser({ editing, addUser, edit, editUserId }) {
 	const [error, setError] = useState(false);
 
 	const [loading, setLoading] = useState(false);
+
+	useEffect(() => {
+		if (editing) {
+			first.current.value = user.first_name;
+			last.current.value = user.last_name;
+			email.current.value = user.email;
+		}
+	}, [user, editing]);
 
 	const addUserHandler = async (e) => {
 		e.preventDefault();
@@ -66,8 +74,6 @@ function Adduser({ editing, addUser, edit, editUserId }) {
 			return;
 		} else {
 			const data = {};
-			console.log('first', first.current.value);
-
 			if (first.current.value !== '') {
 				data.first_name = first.current.value;
 			}

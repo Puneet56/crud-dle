@@ -74,7 +74,7 @@ function Card({ item, deleteUser, editUser }) {
 			{editing && (
 				<AnimatePresence initial={false} exitBeforeEnter={true}>
 					<Backdrop onClick={() => setEditing(false)}>
-						<AddUser editing edit={editHandler} editUserId={id} />
+						<AddUser editing edit={editHandler} editUserId={id} user={item} />
 					</Backdrop>
 				</AnimatePresence>
 			)}
