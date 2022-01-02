@@ -24,6 +24,7 @@ const variants = {
 
 function UserItem({ item, time, getSelected }) {
 	const { avatar, first_name, last_name } = item;
+
 	return (
 		<AnimatePresence>
 			<Item

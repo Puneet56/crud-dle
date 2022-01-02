@@ -43,31 +43,29 @@ function Users() {
 		getusers();
 	}, []);
 
-	const getSelected = (selected) => {
+	const getSelected = selected => {
 		setSelected(selected);
 	};
 
-	const addUser = (userdetails) => {
-		setUsers((prevState) => [userdetails, ...prevState]);
+	const addUser = userdetails => {
+		setUsers(prevState => [userdetails, ...prevState]);
 		setAddingUser(!addingUser);
 	};
 
 	const deleteUser = async (userId, status) => {
 		if (status === true) {
-			setUsers((prevState) => prevState.filter((item) => item.id !== userId));
+			setUsers(prevState => prevState.filter(item => item.id !== userId));
 		} else {
 			return;
 		}
 	};
 
-	const editUser = (userdetails) => {
-		setUsers((prevState) => {
+	const editUser = userdetails => {
+		setUsers(prevState => {
 			const unmodifiedUsers = prevState.filter(
-				(item) => item.id !== userdetails.id
+				item => item.id !== userdetails.id
 			);
-			const modifiedUser = prevState.filter(
-				(item) => item.id === userdetails.id
-			);
+			const modifiedUser = prevState.filter(item => item.id === userdetails.id);
 			//modified user changed details updated.
 			if (/[a-z0-9]/i.test(userdetails.first_name)) {
 				modifiedUser[0].first_name = userdetails.first_name;
